@@ -1,0 +1,164 @@
+body {
+	font-family: sans-serif;
+	margin: 0px;
+	overflow-x: hidden;
+	background: #ededed;
+}
+
+.page-width {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 800px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.navbar-inside {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.navbar {
+  background-color: #333;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.navbar-container {
+	width: 100%;
+	background: #252525;
+	padding-top: 10px;
+}
+
+.navbar-header {
+	background-color: unset;
+        border-radius: unset;
+}
+
+.navbar-header li {
+  padding: 0px !important;
+  width: unset !important;
+}
+
+.page-container {
+	width: 100%;
+	background: #ededed;
+	padding-bottom: 10px;
+
+}
+
+.page {
+	background: #ffffff;
+	border-radius: 0px 0px 10px 10px;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.page-inside {
+	padding: 10px;	
+}
+
+.footer {
+	padding: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	color: #525252;
+}	
+
+.footer p {
+	font-size: 10px;
+	margin: 0px;	
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.navbar li a, .navbar li h3, .navbar li img {
+  display: block;
+  color: white;
+  text-align: left;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.navbar li a:hover {
+  background-color: #252525;
+}
+
+.navbar li h3 {
+	margin: 0px;
+}
+
+.mob-btn {
+  display: none;
+  float: right;
+  cursor: pointer;
+}
+
+.mob-btn:hover {
+   background: #252525;
+   border-radius: 10px;
+}
+
+.mob-btn img {
+  height: 1.2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar li {
+    float: none;
+  }
+  
+  .mob-hidden {
+    display: none;
+  }
+
+  .mob-btn {
+    display: block;
+  }
+
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+.link {
+	text-decoration: underline !important;
+}
+
+.link:hover {
+	color: #5c5c5c;
+}
+
+code {
+	display: inline-block;
+	background: #ececec;
+	padding: 10px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #dcdcdc;
+	border-width: 1px;
+}
+
