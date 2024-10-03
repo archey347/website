@@ -1,7 +1,8 @@
+<div style="width: 150px; height: 150px; border-radius: 5px; background-image: url('/media/me.png'); background-size: cover; background-position: center; float: right; margin: 20px;">
+</div>
 <h2>Home</h2>
 <p>
-<div style="width: 150px; height: 150px; border-radius: 5px; background-image: url('/media/me.png'); background-size: cover; background-position: center;">
-</div>
+
 </p>
 <p>
       Hi 👋<br>
@@ -10,7 +11,9 @@
       <br>
       I'm currently working as a software engineer at <a class="link" href="https://netcraft.com">Netcraft</a>, a cybercrime disruption company.<br>
       <br>
-      Outside of work, I am intrested in <a class="link" href="https://archbar.me/photos/">photography</a> and <a class="link" href="https://wwlrc.co.uk">off-road motorsport</a>. I also spend a lot of time volunteering at the Scouts <a class="link" href="https://instagram.com/51stBathScouts/">as a leader</a>, amongst other things.<br>
+      Outside of work, I am intrested in <a class="link" href="https://archbar.me/photos/">photography</a> and <a class="link" href="https://wwlrc.co.uk">off-road motorsport</a>.<br>
+      <br>
+      I also spend a lot of time volunteering at the Scouts in various roles; <a class="link" href="https://instagram.com/51stBathScouts/">as a leader</a>, a <a class="link" href="https://www.instagram.com/fodscouts_youthteam/">District Youth Comissioner</a>, and a trustee for <a class="link" href="https://www.s-e.org.uk">Strategy & Evolution</a><br>
 </p>
 <p>
       <h3>Socials</h3>
