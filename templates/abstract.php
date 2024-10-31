@@ -2,7 +2,7 @@
  <head>
   <title><?php print($page_title); ?></title>
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
