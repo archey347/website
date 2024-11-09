@@ -2,7 +2,7 @@
 </div>
 <h2>Home</h2>
 <p>
-      Hi 👋<br>
+      Hi! 👋<br>
       <br>
       You've reached the website of Archey Barrell.<br> 
       <br>
