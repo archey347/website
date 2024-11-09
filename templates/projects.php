@@ -87,5 +87,6 @@ The task of printing of a new diary each year often got delegated to me. I found
 system quite repetative, so I ended up coding a solution instead.
 </p>
 <p>
+<u><a href="https://scrapbook.archbar.me/diary-generator/diary.php">https://scrapbook.archbar.me/diary-generator/diary.php</a></u><br>
 <u><a href="https://github.com/archey347/diary-generator/">https://github.com/archey347/diary-generator/</a></u>
 </p>
