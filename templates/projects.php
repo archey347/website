@@ -66,7 +66,7 @@ Graphical visualisation of a four stroke internal combustion engine. I made it a
 Allows customisation of the amount of pistons and their timings, by entering a set of degree offsets (0 to 720 degrees), deliminated by commas.
 </p>
 <p>
-<u><a href="https://archbar.me/graphics/engine.html">Visit</a></u>
+<u><a target="_blank" href="https://scrapbook.archbar.me/graphics/engine.html">Visit</a></u>
 </p>
 
 <hr>
