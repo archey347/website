@@ -22,3 +22,8 @@
       <h3>Code Reviews</h3>
       If I have reviewed one of your pull requests, I would recommend taking a read of my <u><a href="/code_review.php">code review guide</a></u>.
 </p>
+
+<p>
+      <h3>Web Edit</h3>
+      If you can see this, then it means I've sucessfully setup the ci.
+</p>
