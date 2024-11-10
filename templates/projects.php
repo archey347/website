@@ -4,12 +4,13 @@
 <h3 style="margin-bottom: 5px;">Homelab</h3>
 <i>2024 - present</i></p>
 <p>
-Often a staple project amongst those who know that logs are not just something that you find in the woods, or perhaps leave in the toilet.
+Often a staple project amongst those who know that logs are not just something that you burn on fires, or perhaps leave in the toilet.
 </p>
 <p>
 Currently running some DNS stuff mainly (<code>ns2.archbar.me</code> is the one in the bottom right hand corner of the photo) plus a few useful services, with everything setup with the
 config in some kind of version control. 
-  
+</p>
+<p>
 For now I'm just using docker containers setup via ansible, but my long term aim is to setup a kubernetes cluster. A while ago, when I was 16, 
 I built a box for putting lots of Raspberry Pis in; I think I'll use it as a solution for the inevitable increase in the number of nodes I have.
 </p>
