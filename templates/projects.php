@@ -67,7 +67,7 @@ We had to submit the code and a report, and the week after a final image that wo
 for the project, to stop future students copying, but I can share the final image.
 </p>
 <p>
-Unfortunutly I discovered a memory leak in my ray tracer a week for the coursework was due in, which hindered the quality of the final image I could produce (generating 
+Unfortunutly I discovered a memory leak in my ray tracer the week before the final image was due in, which hindered the quality of the final picture I could produce (generating 
 it used all 64GB of memory in my laptop!). Otherwise I would've been able to use a greater number of samples for the motion blur, and produced longer 
 star streaks.
 </p>
