@@ -60,15 +60,19 @@ everything is inconsistent; I really would like to redo it at some point.
 <h3 style="margin-bottom: 5px;">Ray Tracer</h3>
 <i>Autumn 2023</i></p>
 <p>
-A project for a final year module at University. Features included shadows, reflections, transparency and motion blur (including rolling shutter).
+A project for an Adanced Computer Graphics module final year module at University (one of my most favourite modules), taught by [Ken Cameron](https://researchportal.bath.ac.uk/en/persons/ken-cameron). Features included shadows, reflections, transparency and motion blur (including rolling shutter).
 </p>
 <p>
 We had to submit the code and a report, and the week after a final image that would demonstrate the functions of our ray tracer. I can't share the code
-for the project, to stop future students copying the code, but I can share the final image.
+for the project, to stop future students copying, but I can share the final image.
 </p>
 <p>
-Unfortunutly I discovered a memory leak in my ray tracer, which hindered the quality of the final image (generating it used all 64GB of memory in my 
-laptop!). Otherwise I would've been able to use a greater number of samples for the motion blur, and produced longer star streaks.
+Unfortunutly I discovered a memory leak in my ray tracer a week for the coursework was due in, which hindered the quality of the final image I could produce (generating 
+it used all 64GB of memory in my laptop!). Otherwise I would've been able to use a greater number of samples for the motion blur, and produced longer 
+star streaks.
+</p>
+<p>
+One day I might revisit it to try and hunt out that memory leak.
 </p>
 
 <img src="./media/image.png" style="width: 100%; max-width: 600px;">
