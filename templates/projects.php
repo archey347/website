@@ -8,8 +8,10 @@ Often a staple project amongst those who know that logs are not just something t
 </p>
 <p>
 Currently running some DNS stuff mainly (<code>ns2.archbar.me</code> is the one in the bottom right hand corner of the photo) plus a few useful services, with everything setup with the
-config in some kind of version control. For now I'm just using docker containers setup via ansible, but my long term aim is to setup a kubernetes cluster. A while ago, when I was 16, 
-I built a box for putting lots of Rasperry Pis in, which I think I'll use for holding the cluster.
+config in some kind of version control. 
+  
+For now I'm just using docker containers setup via ansible, but my long term aim is to setup a kubernetes cluster. A while ago, when I was 16, 
+I built a box for putting lots of Raspberry Pis in; I think I'll use it as a solution for the inevitable increase in the number of nodes I have.
 </p>
 <p>
 <img src="./media/homelab.jpg" style="width: 100%; max-width: 700px;"><br><br>
