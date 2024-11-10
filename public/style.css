@@ -155,8 +155,6 @@ a:visited {
 code {
 	display: inline-block;
 	background: #ececec;
-	padding-left: 10px;
-	padding-right: 10px;
 	border-radius: 5px;
 	border-style: solid;
 	border-color: #dcdcdc;
