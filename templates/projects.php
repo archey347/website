@@ -60,7 +60,7 @@ everything is inconsistent; I really would like to redo it at some point.
 <h3 style="margin-bottom: 5px;">Ray Tracer</h3>
 <i>Autumn 2023</i></p>
 <p>
-A project for an Adanced Computer Graphics module final year module at University (one of my most favourite modules), taught by [Ken Cameron](https://researchportal.bath.ac.uk/en/persons/ken-cameron). Features included shadows, reflections, transparency and motion blur (including rolling shutter).
+A project for an Adanced Computer Graphics module final year module at University (one of my most favourite modules), taught by <a class="link" href="https://researchportal.bath.ac.uk/en/persons/ken-cameron">Ken Cameron</a>. Features included shadows, reflections, transparency and motion blur (including rolling shutter).
 </p>
 <p>
 We had to submit the code and a report, and the week after a final image that would demonstrate the functions of our ray tracer. I can't share the code
