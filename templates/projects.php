@@ -16,7 +16,7 @@ I built a box for putting lots of Raspberry Pis in; I think I'll use it as a sol
 </p>
 <p>
 <img src="./media/homelab.jpg" style="width: 100%; max-width: 700px;"><br><br>
-<i>Are network indicator lights a suitable alternative to having a christmas tree?</i>
+<i>Are network indicator lights a suitable alternative if you don't have a christmas tree?</i>
 </p>
 
 <hr>
