@@ -4,7 +4,7 @@
 <h3 style="margin-bottom: 5px;">Homelab</h3>
 <i>2024 - present</i></p>
 <p>
-Often a staple project amongst those who know that logs are not just something that you burn on fires, or perhaps leave in the toilet.
+A staple project amongst those who know that logs are not just something that you burn on fires, or perhaps leave in the toilet.
 </p>
 <p>
 Currently running some DNS stuff mainly (<code>ns2.archbar.me</code> is the one in the bottom right hand corner of the photo) plus a few useful services, with everything setup with the
