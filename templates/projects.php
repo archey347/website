@@ -12,7 +12,7 @@ config in some kind of version control. For now I'm just using docker containers
 I built a box for putting lots of Rasperry Pis in, which I think I'll use for holding the cluster.
 </p>
 <p>
-<img src="./media/homelab.jpg" style="width: 100%; max-width: 600px;"><br>
+<img src="./media/homelab.jpg" style="width: 100%; max-width: 700px;"><br><br>
 <i>Are network indicator lights a suitable alternative to having a christmas tree?</i>
 </p>
 
