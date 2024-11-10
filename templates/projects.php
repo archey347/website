@@ -11,7 +11,7 @@ Currently running some DNS stuff mainly (<code>ns2.archbar.me</code> is the one 
 config in some kind of version control. 
 </p>
 <p>
-For now I'm just using docker containers setup via ansible, but my long term aim is to setup a kubernetes cluster. A while ago, when I was 16, 
+For now I'm just using docker containers setup via ansible, but my long term aim is to setup a kubernetes cluster. A while ago when I was sixteen, 
 I built a box for putting lots of Raspberry Pis in; I think I'll use it as a solution for the inevitable increase in the number of nodes I have.
 </p>
 <p>
