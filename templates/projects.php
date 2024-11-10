@@ -7,7 +7,7 @@
 Often a staple project amongst those who know that logs are not just something that you find in the woods, or perhaps leave in the toilet.
 </p>
 <p>
-Currently running some DNS stuff mainly (`ns2.archbar.me` is the one in the bottom right hand corner of the photo) plus a few useful services, with everything setup with the
+Currently running some DNS stuff mainly (<code>ns2.archbar.me</code> is the one in the bottom right hand corner of the photo) plus a few useful services, with everything setup with the
 config in some kind of version control. For now I'm just using docker containers setup via ansible, but my long term aim is to setup a kubernetes cluster. A while ago, when I was 16, 
 I built a box for putting lots of Rasperry Pis in, which I think I'll use for holding the cluster.
 </p>
