@@ -1,6 +1,23 @@
 <h2>Projects</h2>
 
 <p>
+<h3 style="margin-bottom: 5px;">Homelab</h3>
+<i>2024 - present</i></p>
+<p>
+Often a staple project amongst those who know that logs are not just something that you find in the woods, or perhaps leave in the toilet.
+</p>
+<p>
+Currently running some DNS stuff mainly (`ns2.archbar.me` is the one in the bottom right hand corner of the photo) plus a few useful services, with everything setup with the
+config in some kind of version control. For now I'm just using docker containers setup via ansible, but my long term aim is to setup a kubernetes cluster. A while ago, when I was 16, 
+I built a box for putting lots of Rasperry Pis in, which I think I'll use for holding the cluster.
+</p>
+<p>
+<img src="./media/homelab.jpg" style="width: 100%; max-width: 600px;"><br>
+<i>Are network indicator lights a suitable alternative to having a christmas tree?</i>
+</p>
+
+<hr>
+  
 <h3 style="margin-bottom: 5px;">Spanner</h3>
 <i>2015 - present</i></p>
 <p>
