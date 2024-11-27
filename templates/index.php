@@ -15,8 +15,9 @@
 <p>
       <h3>Socials</h3>
       <span class="margin: 15px;"><ion-icon name="logo-linkedin"></ion-icon> <a href="https://www.linkedin.com/in/archey-barrell/">archey-barrell</a></span><br>
-      <span class="margin: 15px;"><ion-icon name="logo-github"></ion-icon> <a href="https://github.com/archey347">archey347</a></span><br>
-      <span class="margin: 15px;"><ion-icon name="logo-instagram"></ion-icon> <a href="https://instagram.com/archeybarnel">archeybarnel</a></span><br>
+      <span class="margin: 15px;"><ion-icon name="logo-github"></ion-icon> <a href="https://github.com/archey347">@archey347</a></span><br>
+      <span class="margin: 15px;"><ion-icon name="logo-instagram"></ion-icon> <a href="https://instagram.com/archeybarnel">@archeybarnel</a></span><br>
+      <span class="margin: 15px;"><i>Bluesky</i> <a href="https://bsky.app/profile/archbar.me">@archbar.me</a></span><br>
 </p>
 <p>
       <h3>Code Reviews</h3>
