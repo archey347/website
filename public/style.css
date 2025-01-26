@@ -157,7 +157,7 @@ code {
 	display: inline-block;
 	background: #ececec;
 	padding: 1px;
-	border-radius: 5px;
+	border-radius: 2px;
 	border-style: solid;
 	border-color: #dcdcdc;
 	border-width: 1px;
@@ -190,7 +190,7 @@ code {
  }
 
  code {
-   background: black;
+   background: #222;
    color: white;
  } 
 }
