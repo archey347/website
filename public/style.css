@@ -29,6 +29,7 @@ body {
 	width: 100%;
 	background: #252525;
 	padding-top: 10px;
+ z-index: 10;
 }
 
 .navbar-header {
@@ -45,7 +46,7 @@ body {
 	width: 100%;
 	background: #ededed;
 	padding-bottom: 10px;
-
+ z-index: 0;
 }
 
 .page {
@@ -173,7 +174,7 @@ code {
   } 
 
   .page {
-    background: #333;
+    background: #444;
   }
 
   a:link {
