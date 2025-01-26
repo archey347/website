@@ -162,3 +162,25 @@ code {
 	border-width: 1px;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #111;
+    color: white;
+  } 
+
+  .page-container {
+    background: #111;
+  } 
+
+  .page {
+    background: #333;
+  }
+
+  a:link {
+    color: white;
+  }
+
+  a:visited {
+    color: white;
+  } 
+}
