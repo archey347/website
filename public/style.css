@@ -187,5 +187,9 @@ code {
  
  .footer {
    color: #ccc;
+ }
+
+ code {
+   color: orange;
  } 
 }
