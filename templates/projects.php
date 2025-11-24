@@ -7,10 +7,10 @@
 A staple project amongst those who know that logs are not just things that you burn on fires, or perhaps leave in the toilet.
 </p>
 <p>
-Currently running some DNS stuff mainly (<code>ns2.archbar.me</code> is the one in the bottom right hand corner of the photo) plus a few useful services, with a configuration stored in version control.
+Currently running some DNS stuff mainly (<code>ns2.archbar.me</code> is the one in the bottom right hand corner of the photo) plus a few useful services (IRC bouncer, grafana/victoria metrics), with a configuration stored in version control.
 </p>
 <p>
-For now I'm just using docker containers setup via ansible, but my long term aim is to setup a kubernetes cluster and run most services, except probably bar the most important ones. A while ago when I was sixteen, 
+For now I'm just using docker containers setup via ansible, but my long term aim is to setup a kubernetes cluster and run most services, except probably bar the most important ones in case I screw things up. A while ago when I was sixteen, 
 I built a box for putting lots of Raspberry Pis in; I think I'll use it as a solution for the inevitable increase in the number of nodes I have.
 </p>
 <p>
@@ -23,12 +23,12 @@ I built a box for putting lots of Raspberry Pis in; I think I'll use it as a sol
 <h3 style="margin-bottom: 5px;">Spanner</h3>
 <i>2015 - present</i></p>
 <p>
-Spanner is one of my largest projects. It is an event and membership management system for land rover owner clubs.
+Spanner is one of my largest projects. It is an event and membership management system for Land Rover owner clubs.
 </p>
 <p>
 It has gone through many iterations, including a simplified but complete <u><a href="https://github.com/archey347/Spanner">Visual 
 Basic version for an A-level coursework</a></u>. The most recent iteration (v3) is very modular and is designed such that it could be 
-used for other types organisations in theory, but this is yet to be practiced.
+used for other types organisations in theory, but it hasn't been practiced.
 </p>
 <p>
 The name was inspired by the name of Scout's membership system at the time, compass.
@@ -44,10 +44,14 @@ The name was inspired by the name of Scout's membership system at the time, comp
 <i>2014 - present</i></p>
 <p>
 A website for a land rover club. One of my first projects that had was used by acutal 
-people (which for teen year-old me was a big deal). It includes a basic CMS, allowing 
-the club committee members to add blog posts and update the calendar. The current iteration is built 
-with <u><a href="https://userfrosting.com">UserFrosting</a></u> and a WYSIWYG editor, which is why 
-everything is inconsistent; I really would like to redo it at some point. 
+people (which for teen year-old me was a big deal). The current iteration is a <u><a href="https://github.com/wwlrc/website">nextjs static
+build</u>, pulling dynamic data like events and blog posts from spanner (see above).
+
+The first iteration was made with <u><a href="https://en.wikipedia.org/wiki/WebPlus">Serif WebPlus</a></u> and some custom PHP 
+bodged on to allow committee to manage the blog posts and the calendar. The second iteration was built with
+<u><a href="https://www.wysiwygwebbuilder.com/">WYSIWYG Web Builder</a></u> 
+and included an even greater set of bodges to get it to work with 
+<u><a href="https://userfrosting.com">UserFrosting</a></u>.
 </p>
 <p>
 <u><a href="https://wwlrc.co.uk/">https://wwlrc.co.uk</a></u>
