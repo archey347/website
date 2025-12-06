@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: yaml
+          coverage: xdebug
+          tools: pecl, composer
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Build
+        run: php build.php
