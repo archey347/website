@@ -28,7 +28,7 @@ jobs:
         run: php build.php
 
       - name: Create archive
-        run: zip -r out.zip zip/
+        run: zip -r out.zip out/
 
       - name: Calculate checksum for version
         id: checksum
