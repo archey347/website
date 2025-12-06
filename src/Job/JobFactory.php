@@ -20,6 +20,8 @@ class JobFactory
                 return new TemplatePageJob($this->twig, $options);
             case "copy":
                 return new CopyJob($options);
+            case "error_pages":
+                return new ErrorPagesJob($this->twig, $options);
             default:
                 throw new \InvalidArgumentException("Unknown page type: $type");
         }

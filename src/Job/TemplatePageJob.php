@@ -19,6 +19,6 @@ class TemplatePageJob implements JobInterface
     {
         $path = $this->options["path"];
         $content = $this->twig->render($this->options["template"]);
-        $cb->addPage($path, $content);
+        $cb->AddPage($path, $content);
     }
 }

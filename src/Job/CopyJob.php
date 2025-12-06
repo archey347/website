@@ -34,7 +34,7 @@ class CopyJob implements JobInterface
             }
 
             $content = file_get_contents($srcFile);
-            $cb->addPage($destFile, $content);
+            $cb->AddPage($destFile, $content);
         }
     }
 }

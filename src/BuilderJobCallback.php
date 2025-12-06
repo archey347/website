@@ -16,7 +16,8 @@ class BuilderJobCallback implements JobCallbackInterface
     public function AddPage(string $path, string $content): void
     {
         $filePath = $this->outDir . DIRECTORY_SEPARATOR . $path;
-        if (!file_exists($filePath)) {
+        $dir = dirname($filePath);
+        if (!is_dir($dir)) {
             mkdir(dirname($filePath), 0777, true);
         }
         file_put_contents($filePath, $content);

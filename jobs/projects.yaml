@@ -1,0 +1,4 @@
+type: template
+options:
+  path: /projects.php
+  template: projects.html.twig

@@ -1,0 +1,11 @@
+type: error_pages
+options:
+  template: error.html.twig
+  destination: /errors/
+  errors:
+    - 401
+    - 402
+    - 403
+    - 404
+    - 405
+    - 500
