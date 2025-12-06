@@ -40,6 +40,4 @@ jobs:
     steps:
       - name: Notify deployment server
         run: |
-          curl -X POST https://archbar.me/.deploy/ \
-            -F "artifact_id=${{ needs.build.outputs.artifact_id }}" \
-            -F "deploy_key=${{ secrets.DEPLOY_KEY }}"
+          curl https://archbar.me/.deploy/?artifact_id=${{ needs.build.outputs.artifact_id }}&deploy_key=${{ secrets.DEPLOY_KEY }}
