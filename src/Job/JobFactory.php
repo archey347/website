@@ -18,6 +18,8 @@ class JobFactory
         switch ($type) {
             case "template":
                 return new TemplatePageJob($this->twig, $options);
+            case "copy":
+                return new CopyJob($options);
             default:
                 throw new \InvalidArgumentException("Unknown page type: $type");
         }

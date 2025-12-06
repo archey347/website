@@ -1,0 +1,4 @@
+type: copy
+options:
+  src: static/
+  dest: /

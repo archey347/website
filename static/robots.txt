@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /sitemap.php
+Disallow: /error.php
+Disallow: /media
+Sitemap: https://archbar.me/sitemap.xml
