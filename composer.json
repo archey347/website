@@ -1,0 +1,19 @@
+{
+  "name": "archey347/website",
+  "type": "project",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Archey Barrell",
+      "email": "a@archbar.me"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Website\\": "src/"
+    }
+  },
+  "require": {
+    "twig/twig": "^3.0"
+  }
+}
