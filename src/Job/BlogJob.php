@@ -36,6 +36,8 @@ class BlogJob implements JobInterface
             $content = $this->twig->render("blog/post.html.twig", [
                 "blog" => [
                     "title" => $metadata["title"],
+                    "tags" => $metadata["tags"],
+                    "published_at" => $metadata["published_at"],
                     "content" => $blog->getContent(),
                 ],
             ]);
@@ -56,6 +58,7 @@ class BlogJob implements JobInterface
             $listing[] = [
                 "title" => $metadata["title"],
                 "url" => $url,
+                "tags" => $metadata["tags"],
                 "published_at" => strtotime($metadata["published_at"]),
             ];
         }

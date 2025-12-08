@@ -4,6 +4,9 @@
 
 {% block page_content %}
 <h2>{{ blog.title }}</h2>
+<p>
+    <i>Published at {{ blog.published_at | date('F j, Y') }} | Tags: {{ blog.tags | join(', ') }}</i>
+</p>
 
 {{ blog.content | raw }}
 {% endblock %}
