@@ -1,0 +1,19 @@
+{% extends 'abstract.html.twig' %}
+
+{% block title %}Archey Barrell - Blog{% endblock %}
+
+{% block page_content %}
+<h2>Blog</h2>
+
+{% for blog in blogs %}
+    <a href="{{ blog.url }}">
+        <div style="width: 100%;">
+            <h3>{{ blog.title }}</h3>
+            <p><i>Published at {{ blog.date | date('F j, Y') }}</i></p>
+        </div>
+    </a>
+    <hr>
+{% else %}
+    <p>No blog posts found.</p>
+{% endfor %}
+{% endblock %}

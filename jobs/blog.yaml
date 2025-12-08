@@ -1,0 +1,4 @@
+type: blog
+options:
+  src_path: blog
+  base_url: /blog

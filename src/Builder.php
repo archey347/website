@@ -21,6 +21,7 @@ class Builder
 
     function run(): void
     {
+        $this->resetOutDir();
         $jobs = $this->getJobs($this->jobDir);
 
         $callback = new BuilderJobCallback($this->outDir);

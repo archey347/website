@@ -1,0 +1,9 @@
+{% extends 'abstract.html.twig' %}
+
+{% block title %}Archey Barrell - Blog{% endblock %}
+
+{% block page_content %}
+<h2>{{ blog.title }}</h2>
+
+{{ blog.content | raw }}
+{% endblock %}
