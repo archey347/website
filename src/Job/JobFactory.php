@@ -24,6 +24,8 @@ class JobFactory
                 return new BlogJob($this->twig, $options);
             case "error_pages":
                 return new ErrorPagesJob($this->twig, $options);
+            case "rss":
+                return new RssJob($this->twig, $options);
             default:
                 throw new \InvalidArgumentException("Unknown page type: $type");
         }
