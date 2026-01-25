@@ -59,7 +59,7 @@ class BlogJob implements JobInterface
                 "title" => $metadata["title"],
                 "url" => $url,
                 "tags" => $metadata["tags"],
-                "published_at" => strtotime($metadata["published_at"]),
+                "published_at" => $metadata["published_at"],
             ];
         }
 
