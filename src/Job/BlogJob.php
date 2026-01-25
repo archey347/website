@@ -65,7 +65,7 @@ class BlogJob implements JobInterface
 
         usort(
             $listing,
-            fn($a, $b) => $b["published_at"] <=> $a["published_at"],
+            fn($a, $b) => $a["published_at"] <=> $b["published_at"],
         );
 
         $content = $this->twig->render("blog/index.html.twig", [
