@@ -38,15 +38,12 @@ class RssJob implements JobInterface
                 "title" => $metadata["title"],
                 "author" => $metadata["author"] ?? "",
                 "url" => $url,
-                "published_at" => strtotime($metadata["published_at"]),
+                "published_at" => $metadata["published_at"],
                 "content" => $blog->getContent(),
             ];
         }
 
-        usort(
-            $items,
-            fn($a, $b) => $b["published_at"] <=> $a["published_at"],
-        );
+        usort($items, fn($a, $b) => $b["published_at"] <=> $a["published_at"]);
 
         $content = $this->twig->render("blog/feed.xml.twig", [
             "items" => $items,
