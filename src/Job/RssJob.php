@@ -3,24 +3,24 @@
 namespace Website\Job;
 
 use Twig\Environment;
-use Mni\FrontYAML\Parser;
+use Website\BlogLoader;
 
 class RssJob implements JobInterface
 {
     private array $options;
     private Environment $twig;
-    private Parser $parser;
+    private BlogLoader $blogLoader;
 
     public function __construct(Environment $twig, array $options)
     {
         $this->twig = $twig;
         $this->options = $options;
-        $this->parser = new Parser();
+        $this->blogLoader = new BlogLoader();
     }
 
     public function run(JobCallbackInterface $cb): void
     {
-        $blogs = $this->loadBlogs();
+        $blogs = $this->blogLoader->loadBlogs($this->options["src_path"]);
         $this->renderFeed($cb, $blogs);
     }
 
@@ -56,31 +56,5 @@ class RssJob implements JobInterface
         ]);
 
         $cb->AddPage($this->options["output_path"] ?? "/feed.xml", $content);
-    }
-
-    public function loadBlogs()
-    {
-        $dir = $this->options["src_path"];
-        $files = scandir($dir);
-        $blogs = [];
-
-        foreach ($files as $file) {
-            if ($file == "." || $file == "..") {
-                continue;
-            }
-
-            $blog = $this->parseBlog($dir . DIRECTORY_SEPARATOR . $file);
-            $name = basename($file, ".md");
-            $blogs[$name] = $blog;
-        }
-
-        return $blogs;
-    }
-
-    public function parseBlog($file)
-    {
-        $content = file_get_contents($file);
-        $parsed = $this->parser->parse($content);
-        return $parsed;
     }
 }
