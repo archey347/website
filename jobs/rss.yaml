@@ -1,0 +1,8 @@
+type: rss
+options:
+  src_path: blog
+  blog_base_url: /blog
+  base_url: https://archeybarrell.co.uk
+  output_path: /feed.xml
+  title: Archey Barrell's Blog
+  description: Blog posts from Archey Barrell

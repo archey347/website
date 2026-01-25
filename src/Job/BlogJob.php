@@ -3,24 +3,24 @@
 namespace Website\Job;
 
 use Twig\Environment;
-use Mni\FrontYAML\Parser;
+use Website\BlogLoader;
 
 class BlogJob implements JobInterface
 {
     private array $options;
     private Environment $twig;
-    private Parser $parser;
+    private BlogLoader $blogLoader;
 
     public function __construct(Environment $twig, array $options)
     {
         $this->twig = $twig;
         $this->options = $options;
-        $this->parser = new Parser();
+        $this->blogLoader = new BlogLoader();
     }
 
     public function run(JobCallbackInterface $cb): void
     {
-        $blogs = $this->loadBlogs();
+        $blogs = $this->blogLoader->loadBlogs($this->options["src_path"]);
         $this->renderBlogs($cb, $blogs);
         $this->renderIndex($cb, $blogs);
     }
@@ -73,31 +73,5 @@ class BlogJob implements JobInterface
         ]);
 
         $cb->AddPage($base_url . "/index.html", $content);
-    }
-
-    public function loadBlogs()
-    {
-        $dir = $this->options["src_path"];
-        $file = scandir($dir);
-        $blogs = [];
-        foreach ($file as $file) {
-            if ($file == "." || $file == "..") {
-                continue;
-            }
-
-            $blog = $this->parseBlog($dir . DIRECTORY_SEPARATOR . $file);
-
-            $name = basename($file, ".md");
-            $blogs[$name] = $blog;
-        }
-
-        return $blogs;
-    }
-
-    public function parseBlog($file)
-    {
-        $content = file_get_contents($file);
-        $parsed = $this->parser->parse($content);
-        return $parsed;
     }
 }

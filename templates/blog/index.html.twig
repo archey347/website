@@ -4,6 +4,7 @@
 
 {% block page_content %}
 <h2>Blog</h2>
+<p><a href="/feed.xml">RSS Feed</a></p>
 
 {% for blog in blogs %}
     <a href="{{ blog.url }}">
