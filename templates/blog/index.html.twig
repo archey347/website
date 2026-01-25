@@ -9,7 +9,7 @@
     <a href="{{ blog.url }}">
         <div style="width: 100%;">
             <h3>{{ blog.title }}</h3>
-            <p><i>Published at {{ blog.date | date('F j, Y') }}</i></p>
+            <p><i>Published at {{ blog.published_at | date('F j, Y') }}</i></p>
         </div>
     </a>
 {% else %}
