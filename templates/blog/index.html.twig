@@ -4,16 +4,19 @@
 
 {% block page_content %}
 <h2>Blog</h2>
-<p><a href="/feed.xml" class="rss-link">&#x2713; RSS Feed</a></p>
 
-<div class="blog-list">
+<p><a href="/feed.xml">RSS Feed</a></p>
+
+<hr>
+
+<ul>
 {% for blog in blogs %}
-    <a href="{{ blog.url }}" class="blog-card">
-        <p class="blog-card-title">{{ blog.title }}</p>
-        <p class="blog-card-date">{{ blog.published_at | date('F j, Y') }}</p>
-    </a>
+  <li>
+    {{ blog.published_at | date('j F Y') }} &mdash;
+    <a href="{{ blog.url }}">{{ blog.title }}</a>
+  </li>
 {% else %}
-    <p>No blog posts found.</p>
+  <li>No blog posts found.</li>
 {% endfor %}
-</div>
+</ul>
 {% endblock %}
