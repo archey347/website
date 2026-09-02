@@ -9,14 +9,17 @@
 
 <hr>
 
-<ul>
-{% for blog in blogs %}
-  <li>
-    {{ blog.published_at | date('j F Y') }} &mdash;
-    <a href="{{ blog.url }}">{{ blog.title }}</a>
-  </li>
+{% if blogs is empty %}
+<p>No blog posts found.</p>
 {% else %}
-  <li>No blog posts found.</li>
+<dl>
+{% for blog in blogs %}
+  <dt><a href="{{ blog.url }}">{{ blog.title }}</a></dt>
+  <dd>
+    {{ blog.published_at | date('j F Y') }}
+    {%- if blog.tags is not empty %} &middot; {{ blog.tags | join(', ') }}{% endif %}
+  </dd>
 {% endfor %}
-</ul>
+</dl>
+{% endif %}
 {% endblock %}

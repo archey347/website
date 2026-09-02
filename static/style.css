@@ -43,6 +43,22 @@ pre code {
 	padding: 0;
 }
 
+/*
+ * Blog index: the title on its own line with the date under it, so there is
+ * nothing to squeeze on a narrow screen. The date is dimmed with opacity
+ * rather than a colour, which keeps it working on either background.
+ */
+dt {
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+dd {
+	margin-left: 0;
+	font-size: 0.9em;
+	opacity: 0.75;
+}
+
 .photo {
 	float: right;
 	margin: 0 0 1em 1em;
