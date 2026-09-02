@@ -22,9 +22,25 @@ img {
 	height: auto;
 }
 
-/* Long code samples scroll instead of overflowing. */
+/*
+ * Code. The greys are translucent so the same rule works on a light or a
+ * dark background, and long samples scroll instead of overflowing.
+ */
+code {
+	background: rgba(127, 127, 127, 0.16);
+	padding: 0.1em 0.3em;
+}
+
 pre {
+	background: rgba(127, 127, 127, 0.16);
+	border: 1px solid rgba(127, 127, 127, 0.4);
+	padding: 0.7em 0.8em;
 	overflow-x: auto;
+}
+
+pre code {
+	background: none;
+	padding: 0;
 }
 
 .photo {
