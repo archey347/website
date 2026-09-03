@@ -43,6 +43,11 @@ pre code {
 	padding: 0;
 }
 
+/* <nav> has no margin of its own, unlike the <p> the links used to sit in. */
+nav {
+	margin: 1em 0;
+}
+
 /*
  * The name in the header is still a link home, it just doesn't advertise
  * itself: no underline, no link colour. You only find it if you happen to
@@ -96,5 +101,15 @@ dd {
 	.photo {
 		float: none;
 		margin: 0 0 1em 0;
+	}
+
+	/*
+	 * A line of text is a small thing to hit with a thumb, so on a phone each
+	 * nav link claims the empty space above and below it as well. The links
+	 * grow, the layout doesn't move.
+	 */
+	nav a {
+		display: inline-block;
+		padding: 0.7em 0.35em;
 	}
 }
