@@ -4,16 +4,22 @@
 
 {% block page_content %}
 <h2>Blog</h2>
-<p><a href="/feed.xml" class="rss-link">&#x2713; RSS Feed</a></p>
 
-<div class="blog-list">
-{% for blog in blogs %}
-    <a href="{{ blog.url }}" class="blog-card">
-        <p class="blog-card-title">{{ blog.title }}</p>
-        <p class="blog-card-date">{{ blog.published_at | date('F j, Y') }}</p>
-    </a>
+<p><a href="/feed.xml">RSS Feed</a></p>
+
+<hr>
+
+{% if blogs is empty %}
+<p>No blog posts found.</p>
 {% else %}
-    <p>No blog posts found.</p>
+<dl>
+{% for blog in blogs %}
+  <dt><a href="{{ blog.url }}">{{ blog.title }}</a></dt>
+  <dd>
+    {{ blog.published_at | date('j F Y') }}
+    {%- if blog.tags is not empty %} &middot; {{ blog.tags | join(', ') }}{% endif %}
+  </dd>
 {% endfor %}
-</div>
+</dl>
+{% endif %}
 {% endblock %}
