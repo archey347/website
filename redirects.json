@@ -1,0 +1,18 @@
+{
+  "redirects": [
+    { "from": "/index.php", "to": "/", "status": 301 },
+    { "from": "/projects.php", "to": "/projects/", "status": 301 },
+    { "from": "/contact.php", "to": "/contact/", "status": 301 },
+    { "from": "/code_review.php", "to": "/code-review/", "status": 301 },
+    {
+      "from": "/blog/posts/2025-12-08-hello-world.html",
+      "to": "/blog/posts/2025-12-08-hello-world/",
+      "status": 301
+    },
+    {
+      "from": "/blog/posts/2025-12-08-ipv6-at-home.html",
+      "to": "/blog/posts/2025-12-08-ipv6-at-home/",
+      "status": 301
+    }
+  ]
+}

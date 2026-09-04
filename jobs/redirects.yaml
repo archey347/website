@@ -1,0 +1,5 @@
+type: redirects
+options:
+  source: redirects.json
+  template: htaccess.twig
+  path: /.htaccess

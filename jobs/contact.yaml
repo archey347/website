@@ -1,4 +1,4 @@
 type: template
 options:
-  path: /contact.php
+  path: /contact/index.html
   template: contact.html.twig

@@ -2,6 +2,7 @@
 
 namespace Website;
 
+use Website\Job\FinalJobInterface;
 use Website\Job\JobFactory;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
@@ -26,7 +27,20 @@ class Builder
 
         $callback = new BuilderJobCallback($this->outDir);
 
+        // Some jobs (the sitemap) need to see what everything else produced,
+        // so hold those back until the rest have run.
+        $finalJobs = [];
+
         foreach ($jobs as $job) {
+            if ($job instanceof FinalJobInterface) {
+                $finalJobs[] = $job;
+                continue;
+            }
+
+            $job->run($callback);
+        }
+
+        foreach ($finalJobs as $job) {
             $job->run($callback);
         }
     }

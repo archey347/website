@@ -4,7 +4,9 @@ on:
   push:
     branches: ["main"]
   schedule:
-    - cron: "1 0 1 1 *"
+    # The site is fully static, so rebuild monthly to keep build time values
+    # (the copyright year, the feed's lastBuildDate) from going stale.
+    - cron: "1 0 1 * *"
   workflow_dispatch:
 
 jobs:
@@ -42,4 +44,4 @@ jobs:
     steps:
       - name: Notify deployment server
         run: |
-          curl https://archbar.me/.deploy/?artifact_id=${{ needs.build.outputs.artifact_id }}&deploy_key=${{ secrets.DEPLOY_KEY }}
+          curl -fsS "https://archbar.me/.deploy/?artifact_id=${{ needs.build.outputs.artifact_id }}&deploy_key=${{ secrets.DEPLOY_KEY }}"

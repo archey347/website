@@ -1,0 +1,7 @@
+type: sitemap
+options:
+  base_url: https://archbar.me
+  template: sitemap.xml.twig
+  path: /sitemap.xml
+  exclude:
+    - /errors/

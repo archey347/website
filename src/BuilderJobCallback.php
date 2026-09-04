@@ -7,6 +7,7 @@ use Website\Job\JobCallbackInterface;
 class BuilderJobCallback implements JobCallbackInterface
 {
     private $outDir;
+    private array $pages = [];
 
     public function __construct(string $outDir)
     {
@@ -21,5 +22,12 @@ class BuilderJobCallback implements JobCallbackInterface
             mkdir(dirname($filePath), 0777, true);
         }
         file_put_contents($filePath, $content);
+
+        $this->pages[] = $path;
+    }
+
+    public function getPages(): array
+    {
+        return $this->pages;
     }
 }
