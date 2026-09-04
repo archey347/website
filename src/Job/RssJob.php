@@ -32,7 +32,7 @@ class RssJob implements JobInterface
 
         foreach ($blogs as $name => $blog) {
             $metadata = $blog->getYAML();
-            $url = $blogBaseUrl . "/posts/" . $name . "/";
+            $url = $blogBaseUrl . "/posts/" . $name;
 
             $items[] = [
                 "title" => $metadata["title"],

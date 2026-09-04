@@ -31,7 +31,7 @@ class BlogJob implements JobInterface
 
         foreach ($blogs as $name => $blog) {
             $metadata = $blog->getYAML();
-            $url = $base_url . "/posts/" . $name . "/";
+            $url = $base_url . "/posts/" . $name;
 
             $content = $this->twig->render("blog/post.html.twig", [
                 "blog" => [
@@ -42,7 +42,7 @@ class BlogJob implements JobInterface
                 ],
             ]);
 
-            $cb->AddPage($url . "index.html", $content);
+            $cb->AddPage($url . "/index.html", $content);
         }
     }
 
@@ -53,7 +53,7 @@ class BlogJob implements JobInterface
 
         foreach ($blogs as $name => $blog) {
             $metadata = $blog->getYAML();
-            $url = $base_url . "/posts/" . $name . "/";
+            $url = $base_url . "/posts/" . $name;
 
             $listing[] = [
                 "title" => $metadata["title"],

@@ -52,8 +52,11 @@ class SitemapJob implements FinalJobInterface
             }
         }
 
+        // Pages live at <name>/index.html but are served without the
+        // trailing slash, the root being the one exception.
         if (str_ends_with($path, "/index.html")) {
-            return substr($path, 0, -strlen("index.html"));
+            $path = substr($path, 0, -strlen("/index.html"));
+            return $path === "" ? "/" : $path;
         }
 
         return $path;
