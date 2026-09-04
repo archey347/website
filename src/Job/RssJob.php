@@ -27,7 +27,7 @@ class RssJob implements JobInterface
     public function renderFeed(JobCallbackInterface $cb, array $blogs): void
     {
         $items = [];
-        $baseUrl = $this->options["base_url"] ?? "";
+        $baseUrl = $this->options["site"]["base_url"];
         $blogBaseUrl = $this->options["blog_base_url"] ?? "/blog";
 
         foreach ($blogs as $name => $blog) {

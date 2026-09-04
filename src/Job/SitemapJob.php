@@ -30,7 +30,7 @@ class SitemapJob implements FinalJobInterface
         sort($urls);
 
         $content = $this->twig->render($this->options["template"], [
-            "base_url" => rtrim($this->options["base_url"], "/"),
+            "base_url" => rtrim($this->options["site"]["base_url"], "/"),
             "urls" => $urls,
         ]);
 

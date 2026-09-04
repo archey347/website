@@ -1,0 +1,4 @@
+# Site wide settings. Any key here can be overridden per environment with a
+# SITE_<KEY> variable, so a preview build can point somewhere else without
+# editing this file - SITE_BASE_URL=https://preview.example.com php build.php
+base_url: https://archbar.me

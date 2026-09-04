@@ -7,14 +7,18 @@ use Twig\Environment;
 class JobFactory
 {
     protected Environment $twig;
+    protected array $site;
 
-    public function __construct(Environment $twig)
+    public function __construct(Environment $twig, array $site)
     {
         $this->twig = $twig;
+        $this->site = $site;
     }
 
     public function create(string $type, array $options): JobInterface
     {
+        $options["site"] = $this->site;
+
         switch ($type) {
             case "template":
                 return new TemplatePageJob($this->twig, $options);
