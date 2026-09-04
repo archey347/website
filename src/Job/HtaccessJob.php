@@ -4,7 +4,12 @@ namespace Website\Job;
 
 use Twig\Environment;
 
-class RedirectsJob implements JobInterface
+/**
+ * Renders the .htaccess. The redirect list it pulls in is kept as server
+ * agnostic json, so pointing the site at something that isn't apache means a
+ * new job and template rather than a rewritten list.
+ */
+class HtaccessJob implements JobInterface
 {
     protected Environment $twig;
     protected array $options;
@@ -26,11 +31,6 @@ class RedirectsJob implements JobInterface
         $cb->AddPage($this->options["path"], $content);
     }
 
-    /**
-     * Redirects are stored in a server agnostic json file, so that the format
-     * they get rendered into (currently an .htaccess) can be swapped out
-     * without having to touch the list itself.
-     */
     public function loadRedirects(string $file): array
     {
         $raw = file_get_contents($file);

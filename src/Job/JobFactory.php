@@ -30,8 +30,8 @@ class JobFactory
                 return new ErrorPagesJob($this->twig, $options);
             case "rss":
                 return new RssJob($this->twig, $options);
-            case "redirects":
-                return new RedirectsJob($this->twig, $options);
+            case "htaccess":
+                return new HtaccessJob($this->twig, $options);
             case "sitemap":
                 return new SitemapJob($this->twig, $options);
             default:

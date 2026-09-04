@@ -1,4 +1,4 @@
-type: redirects
+type: htaccess
 options:
   source: redirects.json
   template: htaccess.twig
