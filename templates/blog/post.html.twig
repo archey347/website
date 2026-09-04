@@ -9,11 +9,7 @@
   <small>Published {{ blog.published_at | date('j F Y') }} | Tags: {{ blog.tags | join(', ') }}</small>
 </p>
 
-<hr>
-
 {{ blog.content | raw }}
-
-<hr>
 
 <p><a href="/blog">&lt;&lt; Back to the blog</a></p>
 {% endblock %}
