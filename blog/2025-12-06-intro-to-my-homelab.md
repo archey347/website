@@ -37,9 +37,3 @@ nameserver that depends on a control plane that depends on the nameserver.
 A while ago, when I was sixteen, I built a box for putting lots of Raspberry Pis in. I
 think that's the solution for the inevitable increase in the number of nodes I end up
 with.
-
-### What's next
-
-There are a few things I want to write up: what the ansible setup actually looks like,
-how the monitoring is put together, and eventually how the move to k8s goes (or doesn't).
-The first of them is [how I do IPv6 at home](/blog/posts/2025-12-08-ipv6-at-home).
