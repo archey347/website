@@ -1,0 +1,8 @@
+type: sitemap
+# The sitemap lists the pages every other job produced, so it has to go last.
+run_last: true
+options:
+  template: sitemap.xml.twig
+  path: /sitemap.xml
+  exclude:
+    - /errors/

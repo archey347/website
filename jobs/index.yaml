@@ -1,4 +1,4 @@
 type: template
 options:
-  path: /index.php
+  path: /index.html
   template: index.html.twig

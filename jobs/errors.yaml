@@ -3,6 +3,7 @@ options:
   template: error.html.twig
   destination: /errors/
   errors:
+    - 400
     - 401
     - 402
     - 403

@@ -1,4 +1,4 @@
 type: template
 options:
-  path: /code_review.php
+  path: /code-review/index.html
   template: code_review.html.twig
