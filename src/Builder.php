@@ -2,7 +2,6 @@
 
 namespace Website;
 
-use Website\Job\FinalJobInterface;
 use Website\Job\JobFactory;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
@@ -53,26 +52,70 @@ class Builder
     function run(): void
     {
         $this->resetOutDir();
-        $jobs = $this->getJobs($this->jobDir);
 
+        $jobs = $this->getJobs($this->jobDir);
         $callback = new BuilderJobCallback($this->outDir);
 
-        // Some jobs (the sitemap) need to see what everything else produced,
-        // so hold those back until the rest have run.
-        $finalJobs = [];
+        foreach ($this->sortJobs($jobs) as $job) {
+            $job->run($callback);
+        }
+    }
 
-        foreach ($jobs as $job) {
-            if ($job instanceof FinalJobInterface) {
-                $finalJobs[] = $job;
-                continue;
+    /**
+     * Orders jobs so that everything a job lists in depends_on has run before
+     * it does, letting a job like the sitemap rely on the pages it describes
+     * already existing.
+     */
+    function sortJobs(array $jobs): array
+    {
+        $sorted = [];
+        $state = [];
+
+        foreach (array_keys($jobs) as $name) {
+            $this->sortJob($name, $jobs, $state, $sorted, []);
+        }
+
+        return $sorted;
+    }
+
+    function sortJob(
+        string $name,
+        array $jobs,
+        array &$state,
+        array &$sorted,
+        array $trail,
+    ): void {
+        if (($state[$name] ?? null) === "sorted") {
+            return;
+        }
+
+        if (($state[$name] ?? null) === "sorting") {
+            throw new \RuntimeException(
+                "Jobs depend on each other in a loop: " .
+                    implode(" -> ", [...$trail, $name]),
+            );
+        }
+
+        $state[$name] = "sorting";
+
+        foreach ($jobs[$name]["depends_on"] as $dependency) {
+            if (!isset($jobs[$dependency])) {
+                throw new \RuntimeException(
+                    "Job \"$name\" depends on \"$dependency\", which does not exist",
+                );
             }
 
-            $job->run($callback);
+            $this->sortJob(
+                $dependency,
+                $jobs,
+                $state,
+                $sorted,
+                [...$trail, $name],
+            );
         }
 
-        foreach ($finalJobs as $job) {
-            $job->run($callback);
-        }
+        $state[$name] = "sorted";
+        $sorted[] = $jobs[$name]["job"];
     }
 
     function resetOutDir(): void
@@ -83,7 +126,11 @@ class Builder
         mkdir($this->outDir);
     }
 
-    function getJobs(string $dir): array
+    /**
+     * Jobs are keyed by their file name relative to the job directory, which
+     * is what depends_on refers to.
+     */
+    function getJobs(string $dir, string $prefix = ""): array
     {
         $jobFactory = new JobFactory($this->twig, $this->site);
 
@@ -97,15 +144,18 @@ class Builder
             $path = $dir . DIRECTORY_SEPARATOR . $file;
 
             if (is_dir($path)) {
-                $jobs = array_merge($jobs, $this->getJobs($path));
+                $jobs += $this->getJobs($path, $prefix . $file . "/");
                 continue;
             }
 
             $jobConfig = \yaml_parse_file($path);
-            $jobs[] = $jobFactory->create(
-                $jobConfig["type"],
-                $jobConfig["options"],
-            );
+            $jobs[$prefix . $file] = [
+                "job" => $jobFactory->create(
+                    $jobConfig["type"],
+                    $jobConfig["options"],
+                ),
+                "depends_on" => $jobConfig["depends_on"] ?? [],
+            ];
         }
 
         return $jobs;

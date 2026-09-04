@@ -4,7 +4,7 @@ namespace Website\Job;
 
 use Twig\Environment;
 
-class SitemapJob implements FinalJobInterface
+class SitemapJob implements JobInterface
 {
     protected Environment $twig;
     protected array $options;

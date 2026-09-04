@@ -1,4 +1,10 @@
 type: sitemap
+depends_on:
+  - index.yaml
+  - projects.yaml
+  - contact.yaml
+  - code-review.yaml
+  - blog.yaml
 options:
   template: sitemap.xml.twig
   path: /sitemap.xml
