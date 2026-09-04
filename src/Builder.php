@@ -56,66 +56,30 @@ class Builder
         $jobs = $this->getJobs($this->jobDir);
         $callback = new BuilderJobCallback($this->outDir);
 
-        foreach ($this->sortJobs($jobs) as $job) {
+        foreach ($this->orderJobs($jobs) as $job) {
             $job->run($callback);
         }
     }
 
     /**
-     * Orders jobs so that everything a job lists in depends_on has run before
-     * it does, letting a job like the sitemap rely on the pages it describes
-     * already existing.
+     * Jobs marked run_last go after the rest, so that a job like the sitemap
+     * can describe pages the other jobs have already built.
      */
-    function sortJobs(array $jobs): array
+    function orderJobs(array $jobs): array
     {
-        $sorted = [];
-        $state = [];
+        $first = [];
+        $last = [];
 
-        foreach (array_keys($jobs) as $name) {
-            $this->sortJob($name, $jobs, $state, $sorted, []);
-        }
-
-        return $sorted;
-    }
-
-    function sortJob(
-        string $name,
-        array $jobs,
-        array &$state,
-        array &$sorted,
-        array $trail,
-    ): void {
-        if (($state[$name] ?? null) === "sorted") {
-            return;
-        }
-
-        if (($state[$name] ?? null) === "sorting") {
-            throw new \RuntimeException(
-                "Jobs depend on each other in a loop: " .
-                    implode(" -> ", [...$trail, $name]),
-            );
-        }
-
-        $state[$name] = "sorting";
-
-        foreach ($jobs[$name]["depends_on"] as $dependency) {
-            if (!isset($jobs[$dependency])) {
-                throw new \RuntimeException(
-                    "Job \"$name\" depends on \"$dependency\", which does not exist",
-                );
+        foreach ($jobs as $job) {
+            if ($job["run_last"]) {
+                $last[] = $job["job"];
+                continue;
             }
 
-            $this->sortJob(
-                $dependency,
-                $jobs,
-                $state,
-                $sorted,
-                [...$trail, $name],
-            );
+            $first[] = $job["job"];
         }
 
-        $state[$name] = "sorted";
-        $sorted[] = $jobs[$name]["job"];
+        return [...$first, ...$last];
     }
 
     function resetOutDir(): void
@@ -126,11 +90,7 @@ class Builder
         mkdir($this->outDir);
     }
 
-    /**
-     * Jobs are keyed by their file name relative to the job directory, which
-     * is what depends_on refers to.
-     */
-    function getJobs(string $dir, string $prefix = ""): array
+    function getJobs(string $dir): array
     {
         $jobFactory = new JobFactory($this->twig, $this->site);
 
@@ -144,17 +104,17 @@ class Builder
             $path = $dir . DIRECTORY_SEPARATOR . $file;
 
             if (is_dir($path)) {
-                $jobs += $this->getJobs($path, $prefix . $file . "/");
+                $jobs = array_merge($jobs, $this->getJobs($path));
                 continue;
             }
 
             $jobConfig = \yaml_parse_file($path);
-            $jobs[$prefix . $file] = [
+            $jobs[] = [
                 "job" => $jobFactory->create(
                     $jobConfig["type"],
                     $jobConfig["options"],
                 ),
-                "depends_on" => $jobConfig["depends_on"] ?? [],
+                "run_last" => $jobConfig["run_last"] ?? false,
             ];
         }
 
