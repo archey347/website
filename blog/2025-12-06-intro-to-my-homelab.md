@@ -5,8 +5,7 @@ published_at: 2025-12-06 15:52:00
 tags: ["homelab"]
 ---
 
-I've been building a homelab since 2024. This is the obligatory introduction post,
-so that the rest of the posts I write about it have something to point back to.
+I've been building a homelab since 2024.
 
 ![The homelab rack](/media/homelab.jpg)
 
@@ -18,11 +17,8 @@ Mostly DNS at the moment. `ns2.archbar.me` is the box in the bottom right hand c
 of the photo, and it does a fair amount of the heavy lifting. Alongside that there are a
 handful of services that I actually use day to day:
 
-- An IRC bouncer, so I don't miss things whilst my laptop is shut.
-- Grafana and VictoriaMetrics, for graphs of things that mostly don't need graphing.
-
-Everything is configured from a repository, rather than from whatever I could remember
-typing into an SSH session six months ago.
+- An IRC bouncer.
+- Grafana and VictoriaMetrics.
 
 ### How it's put together
 
