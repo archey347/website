@@ -27,8 +27,7 @@ reproducible, and the whole thing can be rebuilt from the config in version cont
 manage to break something badly enough.
 
 The longer term aim is a kubernetes cluster running most of the services, probably bar
-the most important ones, in case I screw things up. There's not much point in having a
-nameserver that depends on a control plane that depends on the nameserver.
+the most important ones, in case I screw things up.
 
 A while ago, when I was sixteen, I built a box for putting lots of Raspberry Pis in. I
 think that's the solution for the inevitable increase in the number of nodes I end up
