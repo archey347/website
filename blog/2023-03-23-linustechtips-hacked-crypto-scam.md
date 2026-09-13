@@ -16,6 +16,4 @@ branded channels. Most had only a hundred or so subscribers.
 
 Then I came across one with ~15 million. I knew LTT had a subscriber count 
 around that range, so I immediately tried searching for LTT directly, and the 
-crypto livestream was still there. That's when I realised something was up.
-
-I flagged it to my manager, and we watched it live as it unfolded.
+crypto livestream was still there, which is when I realised something was up.
